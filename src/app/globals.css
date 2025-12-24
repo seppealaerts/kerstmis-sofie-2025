@@ -1,0 +1,74 @@
+:root {
+  --background: #f8fafc;
+  --foreground: #1e293b;
+  --primary: #0f766e;
+  --primary-dark: #0d5d56;
+  --accent: #f97316;
+  --accent-light: #fb923c;
+  --secondary: #06b6d4;
+  --secondary-light: #22d3ee;
+  --cream: #f8fafc;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+  /* Prevent pull-to-refresh on mobile */
+  overscroll-behavior-y: none;
+}
+
+/* Ensure emojis use Apple Color Emoji */
+@supports (-webkit-appearance: none) {
+  body {
+    font-family: "Apple Color Emoji", Arial, Helvetica, sans-serif;
+  }
+}
+
+/* Target emoji characters specifically */
+.emoji,
+[class*="emoji"] {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+#__next {
+  height: 100%;
+}
+
+/* Mobile viewport fixes */
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* iOS Safari viewport fix */
+    min-height: -webkit-fill-available;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Christmas theme - light only */
+html {
+  color-scheme: light;
+}

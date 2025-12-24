@@ -1,0 +1,87 @@
+.container {
+  width: 100%;
+  max-width: 540px;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  position: relative;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.slidesWrapper {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 16px;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px -4px rgba(15, 118, 110, 0.1),
+    0 4px 8px -2px rgba(249, 115, 22, 0.1);
+  border: 2px solid rgba(15, 118, 110, 0.1);
+  user-select: none;
+  position: relative;
+}
+
+.slide * {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  gap: 1rem;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  z-index: 10;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(15, 118, 110, 0.3);
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.dotActive {
+  background: linear-gradient(135deg, #0f766e 0%, #f97316 100%);
+  width: 24px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(15, 118, 110, 0.3);
+}
+
+.navButton {
+  max-width: 200px;
+}
+
+@media (max-width: 768px) {
+  .slide {
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+  }
+
+  .navigation {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}

@@ -1,0 +1,136 @@
+.ticketContainer {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  cursor: pointer;
+  background: transparent;
+  min-height: 150px;
+}
+
+.tapHint {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  color: var(--primary);
+  opacity: 0.7;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.ticketInner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+}
+
+.ticketFace {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+  background: #ffffff;
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ticketContent {
+  width: 100%;
+  height: 100%;
+  min-height: 150px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 10% auto 10%;
+  align-items: stretch;
+  background: #ffffff;
+}
+
+.ticketLeft,
+.ticketCenter,
+.ticketRight {
+  min-height: 150px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ticketLeft,
+.ticketCenter {
+  border-right: 1px dashed var(--primary);
+}
+
+.sideText {
+  font-size: 0.75rem;
+  white-space: nowrap;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  color: var(--primary);
+}
+
+.contentWrapper {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  overflow: hidden;
+  background: #ffffff;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  min-height: 150px;
+  gap: 0.75rem;
+}
+
+.contentWrapperFront {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.ticketBack {
+  transform: rotateY(180deg);
+}
+
+@media (max-width: 768px) {
+  .ticketContainer {
+    max-width: 100%;
+    min-height: 120px;
+  }
+  
+  .ticketContent {
+    min-height: 120px;
+  }
+  
+  .ticketLeft,
+  .ticketCenter,
+  .ticketRight {
+    min-height: 120px;
+  }
+  
+  .contentWrapper {
+    padding: 1.25rem 0.75rem;
+    font-size: 0.875rem;
+    min-height: 120px;
+  }
+  
+  .ticketFace {
+    border-radius: 10px;
+  }
+  
+  .ticketContent {
+    border-radius: 8px;
+  }
+}
