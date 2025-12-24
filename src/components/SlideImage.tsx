@@ -46,13 +46,13 @@ export default function SlideImage({
   const MAX_ZOOM = 5;
   const DOUBLE_TAP_DELAY = 300;
 
-  const getDistance = (touch1: Touch, touch2: Touch) => {
+  const getDistance = (touch1: React.Touch, touch2: React.Touch) => {
     const dx = touch2.clientX - touch1.clientX;
     const dy = touch2.clientY - touch1.clientY;
     return Math.sqrt(dx * dx + dy * dy);
   };
 
-  const getCenter = (touch1: Touch, touch2: Touch) => {
+  const getCenter = (touch1: React.Touch, touch2: React.Touch) => {
     return {
       x: (touch1.clientX + touch2.clientX) / 2,
       y: (touch1.clientY + touch2.clientY) / 2,
